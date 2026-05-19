@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drew At Services - Reformas, Construcción y Mantenimiento Profesional</title>
+  
+  <!-- SEO Profesional -->
+  <meta name="description" content="Drew At Services es la solución integral y profesional para proyectos de reformas, construcción y mantenimiento de hogares y empresas. Solicita tu presupuesto sin compromiso.">
+  <meta name="keywords" content="Drew At Services, reformas integrales, empresa de construcción, mantenimiento, reformas de baños, reformas de cocinas, albañilería, obras, servicios profesionales">
+  <meta name="author" content="Drew At Services">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Spanish">
+  <link rel="canonical" href="https://drew-at-services.vercel.app/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://drew-at-services.vercel.app/">
+  <meta property="og:title" content="Drew At Services - Reformas y Mantenimiento">
+  <meta property="og:description" content="Expertos en construcción y reformas con más de 15 años de experiencia. Seriedad, transparencia y acabados impecables.">
+  <meta property="og:image" content="https://drew-at-services.vercel.app/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://drewatservices.com/">
+  <meta property="twitter:title" content="Drew At Services - Reformas y Mantenimiento">
+  <meta property="twitter:description" content="Expertos en construcción y reformas con más de 15 años de experiencia. Seriedad, transparencia y acabados impecables.">
+  <meta property="twitter:image" content="https://drew-at-services.vercel.app/twitter-image.jpg">
+  
+  <!-- Schema.org Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Drew At Services",
+    "image": "https://drewatservices.com/og-image.jpg",
+    "description": "Drew At Services ofrece soluciones de reformas integrales, construcción y mantenimiento a medida para hogares y empresas.",
+    "telephone": "+34-682-676-844",
+    "email": "tucorreo@drewatservices.com",
+    "url": "https://drewatservices.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Barcelona y alrededores",
+      "addressCountry": "ES"
+    },
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 08:00-18:00"
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png">
+
+  <!-- Apple -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple_touch_icon_180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple_touch_icon_152x152.png">
+
+  <!-- Android / PWA -->
+  <link rel="icon" sizes="192x192" href="/android_192x192.png">
+  <link rel="icon" sizes="512x512" href="/android_512x512.png">
+  
+  <!-- Carga de Tailwind CSS a traves de su CDN oficial sin necesidad de herramientas de compilacion -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  
+  <!-- Carga de Lucide Icons (Iconos) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- 
+    CSS Personalizado e Instrucciones para Tailwind:
+    Aqui esta integrado todo el CSS necesario para la pagina
+  -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    body {
+      overflow-x: hidden;
+      font-family: var(--font-sans);
+    }
+    @media (max-width: 768px) {
+      ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background: transparent;
+      }
+    }
+    
+    /* Clases para manejar la navegacion basica entre "paginas" (rutas simuladas) */
+    .view-section { display: none; }
+    .view-section.active { display: block; }
+    
+    /* Animaciones visuales basicas CSS */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .animate-on-scroll.slide-left {
+      transform: translateX(-40px);
+    }
+    .animate-on-scroll.slide-right {
+      transform: translateX(40px);
+    }
+    .animate-on-scroll.scale-up {
+      transform: scale(0.95);
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translate(0) scale(1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+
+  <!-- =============================== NAVBAR =============================== -->
+  <nav class="fixed top-0 w-full bg-slate-100/95 backdrop-blur-md z-50 shadow-sm border-b border-slate-200 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <div class="flex items-center">
+          <a href="#inicio" class="text-xl md:text-2xl font-bold font-sans tracking-tight text-slate-900 group flex items-center gap-2 hover:opacity-90 transition-opacity">
+            <!-- Logo de la empresa (imagen) con el mismo tamaño que el icono anterior -->
+            <span class="bg-amber-500 text-white p-1.5 md:p-2 rounded-lg inline-flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png" 
+                   alt="Logo Drew At Services" 
+                   class="w-6 h-6 md:w-7 md:h-7 object-contain">
+            </span>
+            Drew At<span class="text-amber-500"> Services</span>
+          </a>
+        </div>
+
+        <!-- Escritorio: Links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="text-slate-600 hover:text-amber-500 font-medium transition-colors">Inicio</a>
+          <a href="#servicios" class="text-slate-600 hover:text-amber-500 font-medium transition-colors">Servicios</a>
+          <a href="#nosotros" class="text-slate-600 hover:text-amber-500 font-medium transition-colors">Nosotros</a>
+          <a href="#contacto" class="flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full font-medium hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-md hover:shadow-lg">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Solicitar Presupuesto</span>
+          </a>
+        </div>
+
+        <!-- Movil: Boton Hamburguesa -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+            <i data-lucide="menu" id="menu-icon"></i>
+            <i data-lucide="x" id="close-icon" class="hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movil: Menu Desplegable -->
+    <div id="mobile-menu" class="absolute left-0 right-0 w-full bg-slate-100/95 backdrop-blur-md border-t border-slate-200 shadow-xl origin-top transition-all duration-300 ease-in-out opacity-0 invisible scale-y-95 pointer-events-none md:hidden">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="#inicio" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-200 rounded-md transition-colors">Inicio</a>
+        <a href="#servicios" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-200 rounded-md transition-colors">Servicios</a>
+        <a href="#nosotros" class="mobile-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-200 rounded-md transition-colors">Nosotros</a>
+        <a href="#contacto" class="mobile-link block px-3 py-3 text-base font-medium text-amber-600 hover:text-amber-700 hover:bg-amber-100 rounded-md transition-colors">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    
+    <!-- ======================= VISTA PRINCIPAL (HOME) ======================= -->
+    <div id="view-home" class="view-section active">
+      
+      <!-- Seccion Hero -->
+      <section id="inicio" class="relative pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-slate-900/80 mix-blend-multiply z-10"></div>
+          <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_1_dmeqn1.webp?q=80&w=2831&auto=format&fit=crop" alt="Hero bg" class="w-full h-full object-cover scale-105">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div class="max-w-3xl animate-on-scroll">
+            <span class="inline-block py-1 px-3 rounded-full bg-amber-500/20 text-amber-400 font-medium text-sm border border-amber-500/30 mb-6 backdrop-blur-sm">
+              Especialistas en Reformas Integrales
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4 md:mb-6">
+              Transformamos tus espacios con <span class="text-amber-500">calidad y garantía</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-6 md:mb-8 max-w-2xl leading-relaxed">
+              Servicios profesionales de reformas, instalaciones, pladur, pintura y mantenimiento. 
+              Soluciones a medida para hogares y empresas con resultados que superan expectativas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <a href="#contacto" class="inline-flex items-center justify-center gap-2 bg-amber-500 text-slate-900 px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-amber-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg hover:shadow-amber-500/40">
+                Solicita Presupuesto Gratis
+                <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+              </a>
+              <a href="#servicios" class="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium text-base md:text-lg hover:bg-white/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 backdrop-blur-sm border border-white/10 text-white hover:border-white/30">
+                Nuestros Servicios
+              </a>
+            </div>
+            <div class="mt-8 md:mt-12 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 text-sm text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i><span>Presupuesto sin compromiso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i><span>Cumplimiento de plazos</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-500"></i><span>Garantía de calidad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seccion Servicios -->
+      <section id="servicios" class="py-16 md:py-24 bg-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 -left-24 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 md:mb-4 tracking-tight">
+              Nuestros <span class="text-amber-500">Servicios</span>
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600">
+              Ofrecemos un catálogo completo de soluciones para llevar a cabo cualquier proyecto de reforma, construcción o mantenimiento con un único equipo de confianza.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="services-grid">
+            <!-- Los servicios seran inyectados usando JavaSript para mantener limpio el HTML -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Seccion Nosotros / Beneficios -->
+      <section id="nosotros" class="py-16 md:py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
+            
+            <div class="lg:w-1/2 animate-on-scroll slide-left">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6 tracking-tight">
+                ¿Por qué elegirnos para su <span class="text-amber-500">próxima reforma</span>?
+              </h2>
+              <p class="text-base sm:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
+                Con más de 15 años de experiencia en el sector de la construcción y reformas, hemos construido una sólida reputación basada en la seriedad, la transparencia y los acabados impecables. Nuestro objetivo es que no tenga que preocuparse de nada.
+              </p>
+              
+              <div class="space-y-4 md:space-y-6" id="features-list">
+                <!-- Beneficios inyectados por JavaScript -->
+              </div>
+            </div>
+            
+            <div class="lg:w-1/2 animate-on-scroll slide-right relative">
+              <div class="absolute inset-0 bg-amber-500 transform translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
+              <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_2_acxqag.webp?q=80&w=2670&auto=format&fit=crop" alt="Profesional" class="rounded-2xl shadow-xl w-full h-[400px] md:h-[600px] object-cover">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Seccion Formulario y Contacto CTA -->
+      <section id="contacto" class="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-800/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+            
+            <div class="animate-on-scroll">
+              <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
+                ¿Listo para dar vida a <span class="text-amber-500">tu proyecto</span>?
+              </h2>
+              <p class="text-base sm:text-lg text-slate-300 mb-8 md:mb-10 leading-relaxed max-w-lg">
+                Cuéntanos qué necesitas. Realizamos una visita técnica, tomamos medidas y te entregamos un presupuesto detallado sin ningún coste ni compromiso por tu parte.
+              </p>
+              
+              <div class="space-y-4 md:space-y-6">
+                <!-- Informacion Contacto Lateral -->
+                <a href="tel:+34682676844" class="flex items-center gap-3 md:gap-4 bg-slate-800/50 p-4 md:p-5 rounded-xl border border-slate-700/50 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all duration-500 ease-out group hover:-translate-y-1 cursor-pointer w-full text-left">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-slate-900 text-amber-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors duration-500 ease-out shadow-inner">
+                    <i data-lucide="phone-call" class="w-5 h-5 md:w-6 md:h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs md:text-sm text-slate-400 mb-0.5 group-hover:text-slate-300 transition-colors">Llámanos directamente tocando aqui</p>
+                    <p class="text-[15px] font-semibold text-white">+34 682 676 844</p>
+                  </div>
+                </a>
+                
+                <div class="flex items-center gap-3 md:gap-4 bg-slate-800/50 p-4 md:p-5 rounded-xl border border-slate-700/50 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all duration-500 ease-out group hover:-translate-y-1 mt-4">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-slate-900 text-amber-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors duration-500 ease-out shadow-inner">
+                    <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs md:text-sm text-slate-400 mb-0.5 group-hover:text-slate-300 transition-colors">Envíanos un correo</p>
+                    <p class="text-[15px] font-semibold text-white break-all">contacto@drewatservices.com</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center gap-3 md:gap-4 bg-slate-800/50 p-4 md:p-5 rounded-xl border border-slate-700/50 hover:bg-slate-700/50 hover:border-amber-500/30 transition-all duration-500 ease-out group hover:-translate-y-1 mt-4">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-slate-900 text-amber-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors duration-500 ease-out shadow-inner">
+                    <i data-lucide="map-pin" class="w-5 h-5 md:w-6 md:h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs md:text-sm text-slate-400 mb-0.5 group-hover:text-slate-300 transition-colors">Zona de Trabajo</p>
+                    <p class="text-[15px] font-semibold text-white">Barcelona y alrededores</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario EmailJS -->
+            <div class="bg-white rounded-2xl p-8 shadow-2xl animate-on-scroll">
+              <h3 class="text-2xl font-bold text-slate-900 mb-6">Solicita tu Presupuesto</h3>
+              
+              <div id="form-success" class="hidden bg-emerald-50 text-emerald-600 p-4 rounded-lg flex items-start gap-3 border border-emerald-200 mb-4">
+                <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                <p class="text-sm font-medium">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+              </div>
+              
+              <div id="form-error" class="hidden bg-red-50 text-red-600 p-4 rounded-lg flex items-start gap-3 border border-red-200 mb-4">
+                <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="text-sm font-medium mb-1">Hubo un error al enviar el mensaje.</p>
+                  <p class="text-xs">Por favor, inténtalo de nuevo más tarde o llámanos por teléfono.</p>
+                </div>
+              </div>
+
+              <form id="contact-form" class="space-y-3 md:space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
+                    <input type="text" name="user_name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-slate-900" placeholder="Tu nombre">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
+                    <input type="tel" name="user_phone" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-slate-900" placeholder="Tu teléfono">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" name="user_email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-slate-900" placeholder="tu@email.com">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Tipo de Servicio</label>
+                  <select name="service_type" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-slate-900 bg-white">
+                    <option value="Reforma Integral">Reforma Integral</option>
+                    <option value="Reforma de Baño/Cocina">Reforma de Baño/Cocina</option>
+                    <option value="Instalaciones (Luz, Agua, Gas)">Instalaciones (Luz, Agua, Gas)</option>
+                    <option value="Pladur y Pintura">Pladur y Pintura</option>
+                    <option value="Otros trabajos">Otros trabajos</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Descripción breve del proyecto</label>
+                  <textarea name="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-slate-900 resize-none" placeholder="Cuéntanos qué tienes en mente..."></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-amber-500 text-slate-900 font-bold py-3 md:py-4 rounded-lg hover:bg-amber-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg hover:shadow-amber-500/40 mt-2 text-sm md:text-base flex justify-center items-center gap-2">
+                  <span id="btn-text">Enviar Solicitud</span>
+                  <span id="btn-loader" class="hidden h-5 w-5 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"></span>
+                </button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    </div> <!-- /Fin vista principal -->
+
+    <!-- ======================= VISTAS LEGALES ======================= -->
+    <div id="view-aviso-legal" class="view-section">
+      <div class="pt-24 md:pt-32 pb-16 md:pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Aviso Legal</h1>
+        <div class="prose prose-slate max-w-none text-slate-600 space-y-6">
+          <p><strong>1. Datos identificativos</strong></p>
+          <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: la empresa titular de dominio web es <strong>Drew At Services</strong>.</p>
+          
+          <p><strong>2. Usuarios</strong></p>
+          <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+          
+          <p><strong>3. Uso del portal</strong></p>
+          <p>Nuestra web proporciona el acceso a multitud de informaciones, servicios o datos en Internet pertenecientes a Drew At Services o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal.</p>
+          
+          <p><strong>4. Propiedad intelectual e industrial</strong></p>
+          <p>Drew At Services es titular de todos los derechos de propiedad intelectual e industrial de su página web.</p>
+          
+          <p><strong>5. Modificaciones</strong></p>
+          <p>Drew At Services se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal.</p>
+          
+          <div class="mt-10">
+            <a href="#inicio" class="text-amber-500 font-medium hover:text-amber-600 transition-colors">&larr; Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-privacidad" class="view-section">
+      <div class="pt-24 md:pt-32 pb-16 md:pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Política de Privacidad</h1>
+        <div class="prose prose-slate max-w-none text-slate-600 space-y-6">
+          <p><strong>1. Protección de datos de carácter personal</strong></p>
+          <p><strong>Drew At Services</strong> se compromete a cumplir la legislación vigente en materia de tratamiento de datos de carácter personal.</p>
+          
+          <p><strong>2. Finalidad del tratamiento</strong></p>
+          <p>Los datos personales que se puedan recoger a través de los formularios serán utilizados exclusivamente para responder a consultas, peticiones o solicitudes de presupuestos.</p>
+          
+          <p><strong>3. Legitimación</strong></p>
+          <p>La base legal para el tratamiento de sus datos es el consentimiento expreso otorgado al enviar el formulario.</p>
+          
+          <p><strong>4. Conservación de los datos</strong></p>
+          <p>Los datos proporcionados se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir con obligaciones legales.</p>
+          
+          <div class="mt-10">
+            <a href="#inicio" class="text-amber-500 font-medium hover:text-amber-600 transition-colors">&larr; Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =============================== FOOTER =============================== -->
+  <footer class="bg-slate-950 text-slate-400 py-8 md:py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="col-span-1 md:col-span-2">
+          <a href="#inicio" class="text-2xl font-bold font-sans tracking-tight text-white mb-4 block flex items-center gap-2 hover:opacity-90 transition-opacity">
+            <!-- Logo en el footer mismo tamaño -->
+            <span class="bg-amber-500 text-white p-1.5 rounded-lg inline-flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png" 
+                   alt="Logo Drew At Services" 
+                   class="w-6 h-6 md:w-7 md:h-7 object-contain">
+            </span>
+            Drew At<span class="text-amber-500"> Services</span>
+          </a>
+          <p class="max-w-sm text-sm leading-relaxed mb-6">Tu empresa de confianza para todo tipo de reformas, instalaciones y mantenimientos. Calidad profesional y garantías por escrito.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#inicio" class="hover:text-amber-500 transition-colors">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a></li>
+            <li><a href="#nosotros" class="hover:text-amber-500 transition-colors">Sobre Nosotros</a></li>
+            <li><a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Servicios</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Reformas Integrales</a></li>
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Electricidad y Fontanería</a></li>
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Baños y Cocinas</a></li>
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Pladur y Pintura</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-800 text-sm md:flex justify-between items-center text-center md:text-left">
+        <p>© 2024 Drew At Services. Todos los derechos reservados.</p>
+        <div class="mt-4 md:mt-0 space-x-6 flex justify-center">
+          <a href="#aviso-legal" class="hover:text-white transition-colors">Aviso Legal</a>
+          <a href="#privacidad" class="hover:text-white transition-colors">Política de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================== BOTON WHATSAPP FLOTANTE =============================== -->
+  <a href="https://wa.me/34682676844" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-[#25D366]/80 backdrop-blur-md border border-white/30 text-white p-3 rounded-full shadow-lg shadow-[#25D366]/20 hover:shadow-xl hover:shadow-[#25D366]/40 hover:-translate-y-1.5 hover:scale-105 active:scale-95 transition-all duration-300 z-50 flex items-center justify-center group">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 21c-1.536 0-3.033-.42-4.34-1.216l-.312-.19-3.238.868.868-3.238-.19-.312A8.905 8.905 0 0 1 3.09 12.03c0-4.945 4.025-8.97 8.97-8.97s8.97 4.025 8.97 8.97-4.02 8.97-8.97 8.97zm0-19.988c-6.07 0-11 4.93-11 11 0 1.954.512 3.86 1.488 5.534L1 23l5.632-1.492A10.92 10.92 0 0 0 12.03 23c6.07 0 11-4.93 11-11s-4.93-11-11-11z" fill-rule="evenodd"/>
+      <path d="M17.472 14.383c-.274-.137-1.623-.8-1.874-.892-.25-.091-.432-.137-.614.137-.183.275-.705.892-.865 1.074-.16.183-.32.206-.594.068a7.48 7.48 0 0 1-2.206-1.36 8.24 8.24 0 0 1-1.533-1.92c-.16-.275-.017-.424.12-.56.124-.124.275-.32.41-.482.138-.16.184-.275.276-.458.092-.183.046-.344-.023-.482-.069-.137-.615-1.482-.843-2.029-.222-.533-.448-.461-.614-.47-.16-.01-.343-.012-.526-.012s-.48.07-.73.344c-.25.275-.957.94-.957 2.293s.98 2.66 1.117 2.843c.137.184 1.94 2.96 4.7 4.12.658.276 1.171.442 1.571.565.66.204 1.258.175 1.733.106.529-.077 1.624-.664 1.852-1.306.228-.642.228-1.192.16-1.306-.068-.115-.25-.184-.524-.32z"/>
+    </svg>
+  </a>
+
+  <!-- =============================== JAVASCRIPT INTEGRADO =============================== -->
+  <script>
+    // ----------------------------------------------------------------------
+    // 1. Datos estaticos de la pagina (Separados para limpieza de HTML)
+    // ----------------------------------------------------------------------
+    const servicesData = [
+      { title: "Reformas Integrales", description: "Renovamos por completo tu vivienda o local. Gestión integral del proyecto.", icon: "home", delay: 0 },
+      { title: "Electricidad, Agua y Gas", description: "Instalaciones completas y boletines. Solución de averías y nuevas tomas.", icon: "zap", delay: 50 },
+      { title: "Baños y Cocinas", description: "Rehabilitación completa. Alicatados, cambios de bañera por ducha, encimeras.", icon: "bath", delay: 100 },
+      { title: "Montaje de Pladur", description: "Falsos techos, tabiquería seca, insonorización, mobiliario de pladur a medida.", icon: "brick-wall", delay: 150 },
+      { title: "Pintura Decorativa e Industrial", description: "Pintura interior/exterior. Alisado, estucos, epoxi y antihumedad.", icon: "paint-roller", delay: 200 },
+      { title: "Desagües y Fontanería", description: "Instalaciones sanitarias, filtraciones, desatascos y renovación comunitaria.", icon: "droplet", delay: 250 },
+      { title: "Mamparas a Medida", description: "Suministro y colocación de mamparas a medida con cristal de máxima seguridad.", icon: "ruler", delay: 300 },
+      { title: "Mantenimiento General", description: "Mantenimiento preventivo y correctivo para comunidades, oficinas y viviendas.", icon: "wrench", delay: 350 }
+    ];
+
+    const featuresData = [
+      { icon: "users", title: "Equipo Profesional", description: "Operarios especializados en cada gremio: fontaneros, electricistas con carnet y albañiles." },
+      { icon: "shield-check", title: "Materiales de Calidad", description: "Trabajamos únicamente con primeras marcas y certificaciones para asegurar durabilidad." },
+      { icon: "clock", title: "Cumplimiento de Plazos", description: "Planificación rigurosa que nos permite asegurar por contrato la fecha de finalización." },
+      { icon: "thumbs-up", title: "Garantía Total", description: "Ofrecemos garantía por escrito en nuestros trabajos para su total tranquilidad." }
+    ];
+
+    // ----------------------------------------------------------------------
+    // 2. Renderizado Dinamico en el DOM (Inyeccion de HTML)
+    // ----------------------------------------------------------------------
+    const grid = document.getElementById('services-grid');
+    grid.innerHTML = servicesData.map(s => `
+      <div class="animate-on-scroll bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-500 ease-out group cursor-pointer" style="transition-delay: ${s.delay}ms">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-slate-50 text-slate-900 rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-500 ease-out">
+          <i data-lucide="${s.icon}" class="w-6 h-6 md:w-7 md:h-7"></i>
+        </div>
+        <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3 group-hover:text-amber-600 transition-colors">${s.title}</h3>
+        <p class="text-sm md:text-base text-slate-600 leading-relaxed">${s.description}</p>
+      </div>
+    `).join('');
+
+    const list = document.getElementById('features-list');
+    list.innerHTML = featuresData.map((f, i) => `
+      <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-500 ease-out flex gap-4 md:gap-5 flex-col sm:flex-row items-start group" style="transition-delay: ${i*100}ms">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-amber-50 text-amber-500 rounded-xl flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors duration-500 ease-out shadow-sm">
+            <i data-lucide="${f.icon}" class="w-6 h-6 md:w-7 md:h-7"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1 md:mb-2 group-hover:text-amber-600 transition-colors">${f.title}</h4>
+          <p class="text-sm md:text-base text-slate-600 leading-relaxed">${f.description}</p>
+        </div>
+      </div>
+    `).join('');
+
+    // Inicializar Iconos Lucide
+    lucide.createIcons();
+
+    // ----------------------------------------------------------------------
+    // 3. Manejador de Vistas / Paginas basado en URL Hashes (#)
+    // ----------------------------------------------------------------------
+    function handleHashChange(e) {
+      const hash = window.location.hash;
+      const views = document.querySelectorAll('.view-section');
+      const isInitialLoad = e && e.type === 'load';
+      
+      // Ocultar todas
+      views.forEach(v => v.classList.remove('active'));
+      
+      // Mostrar Segun Hash
+      if (hash === '#aviso-legal') {
+        document.getElementById('view-aviso-legal').classList.add('active');
+        window.scrollTo(0, 0);
+      } else if (hash === '#privacidad') {
+        document.getElementById('view-privacidad').classList.add('active');
+        window.scrollTo(0, 0);
+      } else {
+        // Vista principal de la Home App
+        document.getElementById('view-home').classList.add('active');
+        
+        if (isInitialLoad) {
+          // Evitar que la página baje automáticamente en la carga inicial
+          if (['#contacto', '#servicios', '#nosotros', '#inicio'].includes(hash)) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+          }
+          setTimeout(() => window.scrollTo(0, 0), 10);
+        } else {
+          // Scroll Inteligente
+          if (hash && hash !== '#' && hash !== '#inicio') {
+            setTimeout(() => {
+              const el = document.getElementById(hash.substring(1));
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+          } else if (hash === '#inicio' || hash === '') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('load', handleHashChange);
+
+    // ----------------------------------------------------------------------
+    // 4. Menu Movil
+    // ----------------------------------------------------------------------
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    function toggleMobileMenu() {
+      const isOpen = !menu.classList.contains('opacity-0');
+      
+      if (isOpen) {
+        menu.classList.add('opacity-0', 'invisible', 'scale-y-95', 'pointer-events-none');
+        menu.classList.remove('opacity-100', 'visible', 'scale-y-100', 'pointer-events-auto');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        menu.classList.remove('opacity-0', 'invisible', 'scale-y-95', 'pointer-events-none');
+        menu.classList.add('opacity-100', 'visible', 'scale-y-100', 'pointer-events-auto');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    }
+
+    btn.addEventListener('click', toggleMobileMenu);
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', toggleMobileMenu));
+
+    // ----------------------------------------------------------------------
+    // 5. Motor de Animaciones de Scroll (Vanilla JS e IntersectionObserver)
+    // ----------------------------------------------------------------------
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+    setTimeout(() => {
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    }, 100);
+
+    // ----------------------------------------------------------------------
+    // 6. Formulario y Procesamiento via EmailJS
+    // ----------------------------------------------------------------------
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const name = formData.get('user_name');
+      const phone = formData.get('user_phone');
+      const email = formData.get('user_email');
+      const service = formData.get('service_type');
+      const message = formData.get('message');
+
+      const whatsappText = `¡Hola! Me gustaría solicitar un presupuesto.
+*Nombre:* ${name}
+*Teléfono:* ${phone}
+*Email:* ${email}
+*Tipo de Servicio:* ${service}
+*Mensaje:* ${message}`;
+
+      const encodedText = encodeURIComponent(whatsappText);
+      // Número de whatsapp (con código de país, sin el +)
+      const whatsappNumber = '34682676844'; 
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+      window.open(whatsappUrl, '_blank');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
