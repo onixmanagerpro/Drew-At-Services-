@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>Drew At Services - Reformas, Construcción y Mantenimiento Profesional</title>
+
+    <!-- SEO Profesional -->
+    <meta name="description" content="Drew At Services es la solución integral y profesional para proyectos de reformas, construcción y mantenimiento de hogares y empresas. Solicita tu presupuesto sin compromiso.">
+    <meta name="keywords" content="Drew At Services, reformas integrales, empresa de construcción, mantenimiento, reformas de baños, reformas de cocinas, albañilería, obras, servicios profesionales">
+    <meta name="author" content="Drew At Services">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <link rel="canonical" href="https://drew-at-services.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drew-at-services.vercel.app/">
+    <meta property="og:title" content="Drew At Services - Reformas y Mantenimiento">
+    <meta property="og:description" content="Expertos en construcción y reformas con más de 15 años de experiencia. Seriedad, transparencia y acabados impecables.">
+    <meta property="og:image" content="https://drew-at-services.vercel.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://drewatservices.com/">
+    <meta property="twitter:title" content="Drew At Services - Reformas y Mantenimiento">
+    <meta property="twitter:description" content="Expertos en construcción y reformas con más de 15 años de experiencia. Seriedad, transparencia y acabados impecables.">
+    <meta property="twitter:image" content="https://drew-at-services.vercel.app/twitter-image.jpg">
+
+    <!-- Schema.org Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "Drew At Services",
+            "image": "https://drewatservices.com/og-image.jpg",
+            "description": "Drew At Services ofrece soluciones de reformas integrales, construcción y mantenimiento a medida para hogares y empresas.",
+            "telephone": "+34-682-676-844",
+            "email": "tucorreo@drewatservices.com",
+            "url": "https://drewatservices.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Barcelona y alrededores",
+                "addressCountry": "ES"
+            },
+            "priceRange": "$$",
+            "openingHours": "Mo-Fr 08:00-18:00"
+        }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple_touch_icon_180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple_touch_icon_152x152.png">
+
+    <!-- Android / PWA -->
+    <link rel="icon" sizes="192x192" href="/android_192x192.png">
+    <link rel="icon" sizes="512x512" href="/android_512x512.png">
+
+    <!-- Carga de Tailwind CSS a través de su CDN oficial -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4">
+    </script>
+
+    <!-- Carga de Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+
+    <!-- Google Fonts - Inter + Outfit para títulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+            --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+            --color-brand-50: #f0f4ff;
+            --color-brand-100: #dbe4ff;
+            --color-brand-200: #bac8ff;
+            --color-brand-300: #91a7ff;
+            --color-brand-400: #748ffc;
+            --color-brand-500: #5c7cfa;
+            --color-brand-600: #4c6ef5;
+            --color-brand-700: #4263eb;
+            --color-brand-800: #3b5bdb;
+            --color-brand-900: #364fc7;
+            --color-accent-400: #f783ac;
+            --color-accent-500: #f06595;
+            --color-accent-600: #e64980;
+            --color-surface: #f8f9fc;
+            --color-card: #ffffff;
+            --color-elevated: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            height: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: var(--font-sans);
+            background-color: #f0f2f7;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding-bottom: calc(80px + env(safe-area-inset-bottom, 20px));
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image: radial-gradient(ellipse at 20% 0%, #e8ecf8 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, #f0e6f6 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+                background: transparent;
+            }
+        }
+
+        /* Clases para manejar la navegación entre vistas */
+        .view-section {
+            display: none;
+        }
+        .view-section.active {
+            display: block;
+            animation: viewFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes viewFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animaciones visuales */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .animate-on-scroll.slide-left {
+            transform: translateX(-32px);
+        }
+        .animate-on-scroll.slide-right {
+            transform: translateX(32px);
+        }
+        .animate-on-scroll.scale-up {
+            transform: scale(0.94);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* Card hover lift */
+        .card-lift {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -12px rgba(76, 110, 245, 0.18), 0 8px 24px -8px rgba(76, 110, 245, 0.10);
+        }
+
+        /* Glass effect para navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Bottom nav glass */
+        .bottom-nav-glass {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Active bottom nav item */
+        .bottom-nav-item {
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .bottom-nav-item.active {
+            color: #4c6ef5;
+        }
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 3px;
+            background: #4c6ef5;
+            border-radius: 0 0 4px 4px;
+        }
+
+        /* Ripple effect en botones */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-ripple::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .btn-ripple:active::after {
+            opacity: 1;
+            transition: opacity 0s;
+        }
+
+        /* Indicador de sección activa */
+        .section-dot {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- =============================== NAVBAR SUPERIOR (Tipo App) =============================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="top-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-14 md:h-16">
+                <!-- Logo compacto -->
+                <a href="#inicio" class="flex items-center gap-2.5 group" id="nav-logo">
+                    <div class="w-9 h-9 bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl flex items-center justify-center shadow-md shadow-brand-500/25 group-hover:shadow-lg group-hover:shadow-brand-500/35 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                        <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png"
+                        alt="Logo Drew At Services"
+                        class="w-5 h-5 object-contain brightness-0 invert">
+                    </div>
+                    <span class="font-display font-bold text-lg text-slate-800 tracking-tight">
+                        Drew<span class="text-brand-600">At</span>
+                    </span>
+                </a>
+
+                <!-- Botón llamada escritorio -->
+                <a href="#contacto" class="hidden md:flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 btn-ripple">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    Presupuesto Gratis
+                </a>
+
+                <!-- Hamburguesa móvil -->
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/60 hover:bg-white/90 transition-all duration-300 shadow-sm border border-white/40">
+                    <i data-lucide="menu" id="menu-icon" class="w-5 h-5 text-slate-700"></i>
+                    <i data-lucide="x" id="close-icon" class="w-5 h-5 text-slate-700 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú desplegable móvil -->
+        <div id="mobile-menu" class="absolute left-0 right-0 top-full glass-nav border-t border-white/30 shadow-2xl origin-top transition-all duration-300 ease-in-out opacity-0 invisible scale-y-95 pointer-events-none md:hidden">
+            <div class="px-4 pt-3 pb-6 space-y-1.5">
+                <a href="#inicio" class="mobile-link flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 rounded-xl transition-all">
+                    <i data-lucide="home" class="w-5 h-5"></i> Inicio
+                </a>
+                <a href="#servicios" class="mobile-link flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 rounded-xl transition-all">
+                    <i data-lucide="grid" class="w-5 h-5"></i> Servicios
+                </a>
+                <a href="#nosotros" class="mobile-link flex items-center gap-3 px-4 py-3 text-base font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 rounded-xl transition-all">
+                    <i data-lucide="users" class="w-5 h-5"></i> Nosotros
+                </a>
+                <a href="#contacto" class="mobile-link flex items-center gap-3 px-4 py-3 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-500 rounded-xl shadow-md">
+                    <i data-lucide="send" class="w-5 h-5"></i> Solicitar Presupuesto
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-14 md:pt-16">
+        <!-- ======================= VISTA PRINCIPAL (HOME) ======================= -->
+        <div id="view-home" class="view-section active">
+
+            <!-- Hero Section Rediseñada -->
+            <section id="inicio" class="relative pt-6 pb-10 md:pt-10 md:pb-16 overflow-hidden">
+                <!-- Fondo con gradiente -->
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/88 via-slate-800/90 to-indigo-950/92 z-10"></div>
+                    <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_1_dmeqn1.webp?q=80&w=2831&auto=format&fit=crop"
+                    alt="Hero bg"
+                    class="w-full h-full object-cover scale-105"
+                    loading="eager">
+                </div>
+                <!-- Patrón de puntos decorativo -->
+                <div class="absolute inset-0 z-[5] opacity-[0.06] pointer-events-none" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-20">
+                    <div class="max-w-2xl animate-on-scroll">
+                        <!-- Chip badge -->
+                        <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 text-white/90 font-medium text-xs sm:text-sm border border-white/15 mb-5 backdrop-blur-md">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Especialistas en Reformas Integrales
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-tight mb-4 md:mb-5">
+                            Transformamos espacios con
+                            <span class="bg-gradient-to-r from-brand-300 via-brand-200 to-accent-400 bg-clip-text text-transparent">calidad y garantía</span>
+                        </h1>
+                        <p class="text-sm sm:text-base md:text-lg text-slate-300/90 mb-6 md:mb-8 max-w-xl leading-relaxed">
+                            Servicios profesionales de reformas, instalaciones, pladur, pintura y mantenimiento. Soluciones a medida con resultados que superan expectativas.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="#contacto" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 text-white px-6 py-3.5 rounded-2xl font-bold text-sm md:text-base shadow-xl shadow-brand-500/30 hover:shadow-2xl hover:shadow-brand-500/40 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 btn-ripple">
+                                <i data-lucide="sparkles" class="w-4 h-4 md:w-5 md:h-5"></i>
+                                Presupuesto Gratis
+                            </a>
+                            <a href="#servicios" class="inline-flex items-center justify-center gap-2 bg-white/8 text-white px-6 py-3.5 rounded-2xl font-semibold text-sm md:text-base border border-white/15 hover:bg-white/15 hover:border-white/25 hover:scale-[1.02] active:scale-[0.97] transition-all duration-300 backdrop-blur-sm">
+                                <i data-lucide="arrow-down-circle" class="w-4 h-4 md:w-5 md:h-5"></i>
+                                Ver Servicios
+                            </a>
+                        </div>
+                        <!-- Badges de confianza -->
+                        <div class="mt-7 flex flex-wrap items-center gap-3 sm:gap-5 text-xs sm:text-sm text-slate-300/80">
+                            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Presupuesto sin compromiso</div>
+                            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Cumplimiento de plazos</div>
+                            <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Garantía de calidad</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curva decorativa inferior -->
+                <div class="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+                    <svg viewBox="0 0 1440 60" class="w-full h-auto fill-[#f0f2f7]" preserveAspectRatio="none">
+                        <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" />
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Sección Servicios Rediseñada -->
+            <section id="servicios" class="py-14 md:py-20 relative z-10">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+                        <span class="inline-block text-brand-600 font-semibold text-xs sm:text-sm tracking-wider uppercase mb-2">Nuestros Servicios</span>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3 tracking-tight">
+                            Soluciones <span class="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">integrales</span> para tu proyecto
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-500">Un único equipo de confianza para cualquier reforma, construcción o mantenimiento.</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" id="services-grid">
+                        <!-- Servicios inyectados por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Nosotros Rediseñada -->
+            <section id="nosotros" class="py-14 md:py-20 relative z-10 bg-white/40">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                    <div class="flex flex-col lg:flex-row gap-8 md:gap-14 items-center">
+                        <div class="lg:w-1/2 animate-on-scroll slide-left">
+                            <span class="inline-block text-brand-600 font-semibold text-xs sm:text-sm tracking-wider uppercase mb-2">Sobre Nosotros</span>
+                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4 tracking-tight">
+                                ¿Por qué elegirnos para tu <span class="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">próxima reforma</span>?
+                            </h2>
+                            <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
+                                Más de 15 años de experiencia nos avalan. Seriedad, transparencia y acabados impecables para que no tengas que preocuparte de nada.
+                            </p>
+                            <div class="space-y-3 sm:space-y-4" id="features-list">
+                                <!-- Beneficios inyectados por JS -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 animate-on-scroll slide-right relative mt-6 lg:mt-0">
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-500 to-accent-500 rounded-3xl translate-x-3 translate-y-3 -z-10 opacity-40 blur-sm"></div>
+                            <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_2_acxqag.webp?q=80&w=2670&auto=format&fit=crop"
+                            alt="Profesional trabajando"
+                            class="rounded-3xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+                            loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Contacto Rediseñada -->
+            <section id="contacto" class="py-14 md:py-20 relative z-10">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10">
+                        <!-- Info contacto -->
+                        <div class="lg:col-span-2 animate-on-scroll">
+                            <span class="inline-block text-brand-600 font-semibold text-xs sm:text-sm tracking-wider uppercase mb-2">Contacto</span>
+                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4 tracking-tight">
+                                ¿Listo para <span class="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">tu proyecto</span>?
+                            </h2>
+                            <p class="text-sm sm:text-base text-slate-500 mb-6 leading-relaxed">
+                                Visita técnica, medición y presupuesto detallado sin coste ni compromiso.
+                            </p>
+                            <div class="space-y-3">
+                                <a href="tel:+34682676844" class="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-brand-200 card-lift group cursor-pointer w-full text-left">
+                                    <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 transition-all">
+                                        <i data-lucide="phone-call" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 mb-0.5">Llámanos</p>
+                                        <p class="text-sm font-bold text-slate-800">+34 682 676 844</p>
+                                    </div>
+                                </a>
+                                <div class="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-brand-200 card-lift group">
+                                    <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 transition-all">
+                                        <i data-lucide="mail" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 mb-0.5">Email</p>
+                                        <p class="text-sm font-bold text-slate-800 break-all">contacto@drewatservices.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-brand-200 card-lift group">
+                                    <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 transition-all">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 mb-0.5">Zona de Trabajo</p>
+                                        <p class="text-sm font-bold text-slate-800">Barcelona y alrededores</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulario -->
+                        <div class="lg:col-span-3 animate-on-scroll scale-up">
+                            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/60 border border-slate-100">
+                                <h3 class="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-5">Solicita tu Presupuesto</h3>
+
+                                <div id="form-success" class="hidden bg-emerald-50 text-emerald-700 p-4 rounded-2xl flex items-start gap-3 border border-emerald-200 mb-4 text-sm">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                    <p class="font-medium">¡Mensaje enviado con éxito! Te contactaremos pronto.</p>
+                                </div>
+                                <div id="form-error" class="hidden bg-rose-50 text-rose-700 p-4 rounded-2xl flex items-start gap-3 border border-rose-200 mb-4 text-sm">
+                                    <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <p class="font-medium mb-1">Error al enviar.</p>
+                                        <p class="text-xs">Inténtalo de nuevo o llámanos.</p>
+                                    </div>
+                                </div>
+
+                                <form id="contact-form" class="space-y-3 sm:space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nombre</label>
+                                            <input type="text" name="user_name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all text-slate-800 bg-slate-50/60 focus:bg-white text-sm" placeholder="Tu nombre">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Teléfono</label>
+                                            <input type="tel" name="user_phone" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all text-slate-800 bg-slate-50/60 focus:bg-white text-sm" placeholder="Tu teléfono">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600 mb-1.5">Email</label>
+                                        <input type="email" name="user_email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all text-slate-800 bg-slate-50/60 focus:bg-white text-sm" placeholder="tu@email.com">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600 mb-1.5">Tipo de Servicio</label>
+                                        <select name="service_type" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all text-slate-800 bg-slate-50/60 focus:bg-white text-sm">
+                                            <option value="Reforma Integral">Reforma Integral</option>
+                                            <option value="Reforma de Baño/Cocina">Reforma de Baño/Cocina</option>
+                                            <option value="Instalaciones (Luz, Agua, Gas)">Instalaciones (Luz, Agua, Gas)</option>
+                                            <option value="Pladur y Pintura">Pladur y Pintura</option>
+                                            <option value="Otros trabajos">Otros trabajos</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600 mb-1.5">Descripción breve</label>
+                                        <textarea name="message" required rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all text-slate-800 bg-slate-50/60 focus:bg-white text-sm resize-none" placeholder="Cuéntanos qué tienes en mente..."></textarea>
+                                    </div>
+                                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold py-3.5 rounded-2xl hover:shadow-xl hover:shadow-brand-500/30 hover:scale-[1.02] active:scale-[0.97] transition-all duration-300 text-sm sm:text-base flex justify-center items-center gap-2 btn-ripple">
+                                        <span id="btn-text">Enviar Solicitud</span>
+                                        <span id="btn-loader" class="hidden h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                                        <i data-lucide="send" class="w-4 h-4" id="btn-icon"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /Fin vista principal -->
+
+        <!-- ======================= VISTAS LEGALES ======================= -->
+        <div id="view-aviso-legal" class="view-section">
+            <div class="pt-20 md:pt-28 pb-16 max-w-3xl mx-auto px-4 sm:px-6">
+                <h1 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-8">Aviso Legal</h1>
+                <div class="prose prose-slate max-w-none text-slate-600 space-y-5 text-sm sm:text-base">
+                    <p><strong>1. Datos identificativos.</strong> En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, la empresa titular de dominio web es <strong>Drew At Services</strong>.</p>
+                    <p><strong>2. Usuarios.</strong> El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta las Condiciones Generales de Uso.</p>
+                    <p><strong>3. Uso del portal.</strong> Nuestra web proporciona acceso a informaciones y servicios. El USUARIO asume la responsabilidad del uso del portal.</p>
+                    <p><strong>4. Propiedad intelectual e industrial.</strong> Drew At Services es titular de todos los derechos de propiedad intelectual e industrial de su página web.</p>
+                    <p><strong>5. Modificaciones.</strong> Drew At Services se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas.</p>
+                    <div class="mt-10">
+                        <a href="#inicio" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors">&larr; Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-privacidad" class="view-section">
+            <div class="pt-20 md:pt-28 pb-16 max-w-3xl mx-auto px-4 sm:px-6">
+                <h1 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-8">Política de Privacidad</h1>
+                <div class="prose prose-slate max-w-none text-slate-600 space-y-5 text-sm sm:text-base">
+                    <p><strong>1. Protección de datos.</strong> Drew At Services se compromete a cumplir la legislación vigente en materia de tratamiento de datos de carácter personal.</p>
+                    <p><strong>2. Finalidad.</strong> Los datos recogidos a través de los formularios serán utilizados exclusivamente para responder a consultas y solicitudes de presupuestos.</p>
+                    <p><strong>3. Legitimación.</strong> La base legal es el consentimiento expreso otorgado al enviar el formulario.</p>
+                    <p><strong>4. Conservación.</strong> Los datos se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir obligaciones legales.</p>
+                    <div class="mt-10">
+                        <a href="#inicio" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors">&larr; Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- =============================== FOOTER COMPACTO =============================== -->
+    <footer class="bg-white/70 border-t border-slate-100 py-6 md:py-8 text-center md:text-left">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-700 rounded-lg flex items-center justify-center shadow-sm">
+                        <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png"
+                        alt="Logo"
+                        class="w-4 h-4 object-contain brightness-0 invert">
+                    </div>
+                    <span class="font-display font-bold text-slate-800 text-sm">Drew At Services</span>
+                </div>
+                <p class="text-xs text-slate-400">© 2024 Drew At Services. Todos los derechos reservados.</p>
+                <div class="flex gap-5 text-xs">
+                    <a href="#aviso-legal" class="text-slate-500 hover:text-brand-600 transition-colors font-medium">Aviso Legal</a>
+                    <a href="#privacidad" class="text-slate-500 hover:text-brand-600 transition-colors font-medium">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =============================== BOTTOM NAVIGATION BAR (Tipo App) =============================== -->
+    <nav class="fixed bottom-0 left-0 right-0 z-40 bottom-nav-glass safe-area-bottom" id="bottom-nav">
+        <div class="max-w-5xl mx-auto px-2 sm:px-6">
+            <div class="flex justify-around items-center h-[64px]">
+                <button class="bottom-nav-item active flex flex-col items-center justify-center gap-0.5 px-3 py-2 rounded-xl min-w-[56px] text-brand-600" data-target="inicio">
+                    <i data-lucide="home" class="w-[22px] h-[22px]"></i>
+                    <span class="text-[10px] font-semibold">Inicio</span>
+                </button>
+                <button class="bottom-nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-2 rounded-xl min-w-[56px] text-slate-400" data-target="servicios">
+                    <i data-lucide="grid" class="w-[22px] h-[22px]"></i>
+                    <span class="text-[10px] font-semibold">Servicios</span>
+                </button>
+                <button class="bottom-nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-2 rounded-xl min-w-[56px] text-slate-400" data-target="nosotros">
+                    <i data-lucide="users" class="w-[22px] h-[22px]"></i>
+                    <span class="text-[10px] font-semibold">Nosotros</span>
+                </button>
+                <button class="bottom-nav-item flex flex-col items-center justify-center gap-0.5 px-3 py-2 rounded-xl min-w-[56px] text-slate-400" data-target="contacto">
+                    <i data-lucide="message-circle" class="w-[22px] h-[22px]"></i>
+                    <span class="text-[10px] font-semibold">Contacto</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =============================== BOTÓN WHATSAPP FLOTANTE =============================== -->
+    <a href="https://wa.me/34682676844" target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-[85px] right-5 md:bottom-24 md:right-7 z-50 bg-[#25D366] text-white p-3.5 rounded-2xl shadow-xl shadow-[#25D366]/30 hover:shadow-2xl hover:shadow-[#25D366]/40 hover:-translate-y-1.5 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center group animate-on-scroll"
+    aria-label="Chatea por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.031 21c-1.536 0-3.033-.42-4.34-1.216l-.312-.19-3.238.868.868-3.238-.19-.312A8.905 8.905 0 0 1 3.09 12.03c0-4.945 4.025-8.97 8.97-8.97s8.97 4.025 8.97 8.97-4.02 8.97-8.97 8.97zm0-19.988c-6.07 0-11 4.93-11 11 0 1.954.512 3.86 1.488 5.534L1 23l5.632-1.492A10.92 10.92 0 0 0 12.03 23c6.07 0 11-4.93 11-11s-4.93-11-11-11z" fill-rule="evenodd"/>
+        <path d="M17.472 14.383c-.274-.137-1.623-.8-1.874-.892-.25-.091-.432-.137-.614.137-.183.275-.705.892-.865 1.074-.16.183-.32.206-.594.068a7.48 7.48 0 0 1-2.206-1.36 8.24 8.24 0 0 1-1.533-1.92c-.16-.275-.017-.424.12-.56.124-.124.275-.32.41-.482.138-.16.184-.275.276-.458.092-.183.046-.344-.023-.482-.069-.137-.615-1.482-.843-2.029-.222-.533-.448-.461-.614-.47-.16-.01-.343-.012-.526-.012s-.48.07-.73.344c-.25.275-.957.94-.957 2.293s.98 2.66 1.117 2.843c.137.184 1.94 2.96 4.7 4.12.658.276 1.171.442 1.571.565.66.204 1.258.175 1.733.106.529-.077 1.624-.664 1.852-1.306.228-.642.228-1.192.16-1.306-.068-.115-.25-.184-.524-.32z"/>
+    </svg>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full border-2 border-[#25D366] flex items-center justify-center">
+        <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span>
+    </span>
+</a>
+
+<!-- =============================== JAVASCRIPT INTEGRADO =============================== -->
+<script>
+    // ----------------------------------------------------------------------
+    // 1. Datos estáticos de la página
+    // ----------------------------------------------------------------------
+    const servicesData = [
+        { title: "Reformas Integrales", description: "Renovación completa de viviendas y locales. Gestión integral.", icon: "home",
+            delay: 0, color: "from-indigo-500 to-blue-500" },
+        { title: "Electricidad y Gas", description: "Instalaciones completas, boletines y nuevas tomas.", icon: "zap",
+            delay: 40, color: "from-amber-500 to-orange-500" },
+        { title: "Baños y Cocinas", description: "Rehabilitación completa. Alicatados, duchas, encimeras.", icon: "bath",
+            delay: 80, color: "from-cyan-500 to-teal-500" },
+        { title: "Montaje de Pladur", description: "Falsos techos, tabiquería seca, insonorización.", icon: "brick-wall",
+            delay: 120, color: "from-violet-500 to-purple-500" },
+        { title: "Pintura Decorativa", description: "Pintura interior/exterior, alisado, estucos, epoxi.", icon: "paint-roller",
+            delay: 160, color: "from-rose-500 to-pink-500" },
+        { title: "Fontanería", description: "Instalaciones sanitarias, filtraciones, desatascos.", icon: "droplet", delay: 200,
+            color: "from-sky-500 to-blue-500" },
+        { title: "Mamparas a Medida", description: "Suministro y colocación con cristal de máxima seguridad.", icon: "ruler",
+            delay: 240, color: "from-emerald-500 to-green-500" },
+        { title: "Mantenimiento", description: "Preventivo y correctivo para comunidades y empresas.", icon: "wrench", delay: 280,
+            color: "from-slate-500 to-slate-700" }
+    ];
+
+    const featuresData = [
+        { icon: "users", title: "Equipo Profesional",
+            description: "Operarios especializados en cada gremio con amplia experiencia." },
+        { icon: "shield-check", title: "Materiales de Calidad",
+            description: "Trabajamos con primeras marcas y certificaciones para máxima durabilidad." },
+        { icon: "clock", title: "Cumplimiento de Plazos",
+            description: "Planificación rigurosa que asegura por contrato la fecha de finalización." },
+        { icon: "thumbs-up", title: "Garantía Total",
+            description: "Ofrecemos garantía por escrito en todos nuestros trabajos." }
+    ];
+
+    // ----------------------------------------------------------------------
+    // 2. Renderizado Dinámico en el DOM
+    // ----------------------------------------------------------------------
+    const grid = document.getElementById('services-grid');
+    grid.innerHTML = servicesData.map(s => `
+        <div class="animate-on-scroll bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-100 shadow-sm card-lift group cursor-pointer flex flex-col items-center text-center gap-3" style="transition-delay: ${s.delay}ms">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-400 flex-shrink-0">
+            <i data-lucide="${s.icon}" class="w-6 h-6 sm:w-7 sm:h-7 text-white"></i>
+          </div>
+          <h3 class="text-sm sm:text-base font-bold text-slate-800 group-hover:text-brand-600 transition-colors leading-tight">${s.title}</h3>
+          <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed hidden sm:block">${s.description}</p>
+        </div>
+      `).join('');
+
+    const list = document.getElementById('features-list');
+    list.innerHTML = featuresData.map((f, i) => `
+        <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 card-lift flex gap-3 sm:gap-4 items-start group" style="transition-delay: ${i*80}ms">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 group-hover:scale-110 transition-all duration-400">
+            <i data-lucide="${f.icon}" class="w-5 h-5 sm:w-5 sm:h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm sm:text-base font-bold text-slate-800 mb-0.5 group-hover:text-brand-600 transition-colors">${f.title}</h4>
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">${f.description}</p>
+          </div>
+        </div>
+      `).join('');
+
+    // Inicializar Iconos Lucide
+    lucide.createIcons();
+
+    // ----------------------------------------------------------------------
+    // 3. Manejador de Vistas / Páginas basado en URL Hashes (#)
+    // ----------------------------------------------------------------------
+    function switchView(hash) {
+        const views = document.querySelectorAll('.view-section');
+        views.forEach(v => v.classList.remove('active'));
+
+        if (hash === '#aviso-legal') {
+            document.getElementById('view-aviso-legal').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (hash === '#privacidad') {
+            document.getElementById('view-privacidad').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            document.getElementById('view-home').classList.add('active');
+            if (hash && hash !== '#' && hash !== '#inicio') {
+                setTimeout(() => {
+                    const el = document.getElementById(hash.substring(1));
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else if (hash === '#inicio' || hash === '' || hash === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        // Re-inicializar iconos tras cambio de vista
+        setTimeout(() => lucide.createIcons(), 200);
+        // Re-observar animaciones
+        setTimeout(() => {
+            document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(el => observer.observe(el));
+        }, 300);
+    }
+
+    function handleHashChange(e) {
+        const hash = window.location.hash;
+        const isInitialLoad = e && e.type === 'load';
+
+        if (isInitialLoad && ['#contacto', '#servicios', '#nosotros', '#inicio'].includes(hash)) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+            switchView('');
+            setTimeout(() => window.scrollTo(0, 0), 10);
+        } else {
+            switchView(hash);
+        }
+        updateBottomNavActive(hash);
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('load', handleHashChange);
+
+    // ----------------------------------------------------------------------
+    // 4. Bottom Navigation Bar
+    // ----------------------------------------------------------------------
+    function updateBottomNavActive(hash) {
+        const items = document.querySelectorAll('.bottom-nav-item');
+        items.forEach(item => item.classList.remove('active', 'text-brand-600'));
+        items.forEach(item => item.classList.add('text-slate-400'));
+
+        let target = 'inicio';
+        if (hash === '#servicios') target = 'servicios';
+        else if (hash === '#nosotros') target = 'nosotros';
+        else if (hash === '#contacto') target = 'contacto';
+        else if (hash === '#aviso-legal' || hash === '#privacidad') target = '';
+
+        if (target) {
+            const activeItem = document.querySelector(`.bottom-nav-item[data-target="${target}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active', 'text-brand-600');
+                activeItem.classList.remove('text-slate-400');
+            }
+        }
+    }
+
+    document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            if (target) {
+                window.location.hash = target;
+            }
+        });
+    });
+
+    // ----------------------------------------------------------------------
+    // 5. Menú Móvil
+    // ----------------------------------------------------------------------
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    function toggleMobileMenu() {
+        const isOpen = !menu.classList.contains('opacity-0');
+        if (isOpen) {
+            menu.classList.add('opacity-0', 'invisible', 'scale-y-95', 'pointer-events-none');
+            menu.classList.remove('opacity-100', 'visible', 'scale-y-100', 'pointer-events-auto');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        } else {
+            menu.classList.remove('opacity-0', 'invisible', 'scale-y-95', 'pointer-events-none');
+            menu.classList.add('opacity-100', 'visible', 'scale-y-100', 'pointer-events-auto');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+        }
+    }
+
+    btn.addEventListener('click', toggleMobileMenu);
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+        toggleMobileMenu();
+        // Pequeña demora para que el menú se cierre antes del scroll
+        setTimeout(() => {
+            const hash = l.getAttribute('href');
+            if (hash) window.location.hash = hash;
+        }, 150);
+    }));
+
+    // ----------------------------------------------------------------------
+    // 6. Motor de Animaciones de Scroll (IntersectionObserver)
+    // ----------------------------------------------------------------------
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+
+    setTimeout(() => {
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    }, 150);
+
+    // ----------------------------------------------------------------------
+    // 7. Formulario y Procesamiento vía WhatsApp
+    // ----------------------------------------------------------------------
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoader = document.getElementById('btn-loader');
+    const btnIcon = document.getElementById('btn-icon');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Simular envío
+        btnText.textContent = 'Enviando...';
+        btnLoader.classList.remove('hidden');
+        if (btnIcon) btnIcon.classList.add('hidden');
+        submitBtn.disabled = true;
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
+
+        setTimeout(() => {
+            const formData = new FormData(form);
+            const name = formData.get('user_name');
+            const phone = formData.get('user_phone');
+            const email = formData.get('user_email');
+            const service = formData.get('service_type');
+            const message = formData.get('message');
+
+            const whatsappText =
+                `¡Hola! Me gustaría solicitar un presupuesto.%0A%0A*Nombre:* ${name}%0A*Teléfono:* ${phone}%0A*Email:* ${email}%0A*Tipo de Servicio:* ${service}%0A*Mensaje:* ${message}`;
+            const whatsappNumber = '34682676844';
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+            // Mostrar éxito
+            formSuccess.classList.remove('hidden');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            form.reset();
+
+            // Restaurar botón
+            btnText.textContent = 'Enviar Solicitud';
+            btnLoader.classList.add('hidden');
+            if (btnIcon) btnIcon.classList.remove('hidden');
+            submitBtn.disabled = false;
+
+            // Abrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }, 800);
+    });
+
+    // ----------------------------------------------------------------------
+    // 8. Ocultar/Mostrar navbar superior al hacer scroll (efecto app)
+    // ----------------------------------------------------------------------
+    let lastScroll = 0;
+    const topNav = document.getElementById('top-nav');
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 120 && currentScroll > lastScroll) {
+            topNav.style.transform = 'translateY(-100%)';
+        } else {
+            topNav.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+    }, { passive: true });
+
+    // ----------------------------------------------------------------------
+    // 9. Inicialización final
+    // ----------------------------------------------------------------------
+    updateBottomNavActive(window.location.hash || '#inicio');
+</script>
+</body>
+</html>
