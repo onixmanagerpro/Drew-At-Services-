@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drew At Services - Reformas, Construcción y Mantenimiento Profesional</title>
+<meta name="description" content="Drew At Services es la solución integral y profesional para proyectos de reformas, construcción y mantenimiento de hogares y empresas. Solicita tu presupuesto sin compromiso.">
+<meta name="keywords" content="Drew At Services, reformas integrales, empresa de construcción, mantenimiento, reformas de baños, reformas de cocinas, albañilería, obras, servicios profesionales">
+<meta name="author" content="Drew At Services">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Spanish">
+<link rel="canonical" href="https://drew-at-services.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drew-at-services.vercel.app/">
+<meta property="og:title" content="Drew At Services - Reformas y Mantenimiento">
+<meta property="og:description" content="Expertos en construcción y reformas con más de 15 años de experiencia.">
+<meta property="og:image" content="https://drew-at-services.vercel.app/og-image.jpg">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://drewatservices.com/">
+<meta property="twitter:title" content="Drew At Services - Reformas y Mantenimiento">
+<meta property="twitter:image" content="https://drew-at-services.vercel.app/twitter-image.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Drew At Services","telephone":"+34-682-676-844","email":"contacto@drewatservices.com","url":"https://drewatservices.com","address":{"@type":"PostalAddress","addressLocality":"Barcelona y alrededores","addressCountry":"ES"},"priceRange":"$$","openingHours":"Mo-Fr 08:00-18:00"}</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple_touch_icon_180x180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RESET & VARIABLES
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+:root {
+  --amber: #f59e0b;
+  --amber-light: #fcd34d;
+  --amber-dark: #d97706;
+  --dark: #0a0a0a;
+  --dark2: #111111;
+  --dark3: #1a1a1a;
+  --dark4: #222222;
+  --light: #f5f3ef;
+  --light2: #e8e4dd;
+  --muted: #6b6b6b;
+  --muted2: #9a9a9a;
+  --white: #ffffff;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow: 0 4px 24px rgba(0,0,0,.4);
+  --shadow-amber: 0 8px 32px rgba(245,158,11,.25);
+}
+
+/* ============================================================
+   VIEW ROUTING
+============================================================ */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+.sr {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+}
+.sr.sr-left  { transform: translateX(-32px); }
+.sr.sr-right { transform: translateX(32px); }
+.sr.in { opacity: 1; transform: none; }
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  height: 72px;
+  transition: background .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(10,10,10,.96);
+  backdrop-filter: blur(20px);
+  border-color: rgba(245,158,11,.12);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+.nav-logo-box {
+  width: 38px; height: 38px;
+  background: var(--amber);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-logo-box img { width: 24px; height: 24px; object-fit: contain; }
+.nav-logo-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+.nav-logo-name span { color: var(--amber); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  color: var(--muted2);
+  transition: color .25s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: #000;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .25s, transform .2s, box-shadow .25s;
+}
+.nav-btn:hover {
+  background: var(--amber-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-amber);
+}
+.nav-btn svg { width: 14px; height: 14px; }
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  color: #fff;
+  border-radius: 6px;
+  transition: background .2s;
+}
+.hamburger:hover { background: rgba(255,255,255,.08); }
+.hamburger svg { width: 22px; height: 22px; }
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: rgba(10,10,10,.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(245,158,11,.12);
+  padding: 8px 28px 24px;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted2);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--white); }
+.mobile-menu a.mob-cta {
+  border: none;
+  color: var(--amber);
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+@media (max-width: 840px) {
+  .nav-links, .nav-btn { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+}
+.hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  animation: hzoom 16s ease-out forwards;
+}
+@keyframes hzoom {
+  from { transform: scale(1.07); }
+  to   { transform: scale(1.00); }
+}
+.hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(10,10,10,.9) 0%, rgba(10,10,10,.65) 55%, rgba(10,10,10,.35) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 28px 80px;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.25);
+  padding: 7px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  animation: fade-up .8s .1s both;
+}
+.hero-dot {
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(44px, 7vw, 92px);
+  font-weight: 800;
+  line-height: 1.0;
+  color: #fff;
+  margin-bottom: 24px;
+  animation: fade-up .8s .25s both;
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--amber);
+}
+
+.hero-sub {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: rgba(255,255,255,.65);
+  font-weight: 300;
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fade-up .8s .4s both;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  animation: fade-up .8s .55s both;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--amber);
+  color: #000;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background .25s, transform .2s, box-shadow .25s;
+}
+.btn-gold:hover {
+  background: var(--amber-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245,158,11,.35);
+}
+.btn-gold svg { width: 16px; height: 16px; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(8px);
+  transition: background .25s, border-color .25s, transform .2s;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,.13);
+  border-color: rgba(255,255,255,.3);
+  transform: translateY(-2px);
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 56px;
+  animation: fade-up .8s .7s both;
+}
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+}
+.proof-item svg { width: 17px; height: 17px; color: var(--amber); flex-shrink: 0; }
+
+/* Stats strip in hero */
+.hero-stats {
+  position: absolute;
+  right: 60px;
+  bottom: 80px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: fade-up .8s .85s both;
+}
+.hstat {
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 18px 28px;
+  text-align: center;
+  min-width: 130px;
+}
+.hstat-n {
+  font-family: 'Syne', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--amber);
+  line-height: 1;
+}
+.hstat-l {
+  font-size: 10px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* wedge bottom of hero */
+.hero-wedge {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: var(--dark2);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 960px) { .hero-stats { display: none; } }
+@media (max-width: 560px) {
+  .hero-actions { flex-direction: column; }
+  .btn-gold, .btn-ghost { justify-content: center; }
+}
+
+/* ============================================================
+   SECTION WRAPPER
+============================================================ */
+.section { padding: 96px 0; }
+.section-light { background: var(--light); color: var(--dark); }
+.section-dark  { background: var(--dark2); }
+.section-darker{ background: var(--dark3); }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+
+.s-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+.s-label::before { content: ''; width: 28px; height: 1px; background: var(--amber); }
+
+.s-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+.s-title em { font-style: normal; color: var(--amber); }
+.section-light .s-title em { color: var(--amber-dark); }
+
+.s-desc {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--muted2);
+  max-width: 560px;
+}
+.section-light .s-desc { color: #555; }
+
+/* ============================================================
+   SERVICES
+============================================================ */
+.services-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 52px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.svc-card {
+  background: var(--dark2);
+  padding: 36px 28px;
+  position: relative;
+  transition: background .35s;
+  overflow: hidden;
+}
+.svc-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px; width: 0;
+  background: var(--amber);
+  transition: width .45s cubic-bezier(.16,1,.3,1);
+}
+.svc-card:hover { background: var(--dark3); }
+.svc-card:hover::after { width: 100%; }
+
+.svc-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: rgba(255,255,255,.035);
+  position: absolute;
+  top: 12px; right: 16px;
+  line-height: 1;
+  transition: color .35s;
+  pointer-events: none;
+}
+.svc-card:hover .svc-num { color: rgba(245,158,11,.06); }
+
+.svc-icon {
+  width: 48px; height: 48px;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  color: var(--amber);
+  transition: background .35s, border-color .35s, color .35s;
+}
+.svc-card:hover .svc-icon {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #000;
+}
+.svc-icon svg { width: 22px; height: 22px; }
+
+.svc-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  transition: color .3s;
+}
+.svc-card:hover .svc-name { color: var(--amber-light); }
+
+.svc-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px)  { .services-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+.about-badge {
+  position: absolute;
+  bottom: -18px; right: -18px;
+  background: var(--amber);
+  color: #000;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.about-badge-n {
+  font-family: 'Syne', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+}
+.about-badge-l {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.about-border {
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: calc(var(--radius-xl) + 6px);
+  z-index: -1;
+  animation: ab-pulse 4s ease-in-out infinite;
+}
+@keyframes ab-pulse {
+  0%,100% { border-color: rgba(245,158,11,.18); }
+  50%      { border-color: rgba(245,158,11,.45); }
+}
+
+.features-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 22px;
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: var(--radius);
+  transition: border-color .3s, background .3s, transform .3s;
+}
+.feat-item:hover {
+  border-color: rgba(245,158,11,.2);
+  background: var(--dark4);
+  transform: translateX(5px);
+}
+.feat-icon {
+  width: 42px; height: 42px;
+  background: rgba(245,158,11,.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: background .3s, color .3s;
+}
+.feat-item:hover .feat-icon { background: var(--amber); color: #000; }
+.feat-icon svg { width: 19px; height: 19px; }
+.feat-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.feat-desc {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 60px; }
+  .about-img  { height: 360px; }
+  .about-badge { bottom: 14px; right: 14px; }
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-wrap { position: relative; overflow: hidden; }
+.contact-bg-img {
+  position: absolute;
+  inset: 0;
+}
+.contact-bg-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: .07;
+  filter: grayscale(100%);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info .s-title { color: #fff; }
+.contact-info .s-desc  { color: rgba(255,255,255,.5); }
+
+.contact-cards {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  color: #fff;
+  transition: border-color .3s, background .3s, transform .3s;
+}
+.cc:hover {
+  border-color: rgba(245,158,11,.3);
+  background: rgba(245,158,11,.06);
+  transform: translateY(-2px);
+}
+.cc-icon {
+  width: 46px; height: 46px;
+  background: rgba(245,158,11,.12);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: background .3s, color .3s;
+}
+.cc:hover .cc-icon { background: var(--amber); color: #000; }
+.cc-icon svg { width: 20px; height: 20px; }
+.cc-lbl { font-size: 11px; color: rgba(255,255,255,.4); letter-spacing: 1px; text-transform: uppercase; }
+.cc-val { font-size: 15px; font-weight: 600; color: #fff; margin-top: 2px; }
+
+/* Form */
+.form-box {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.form-box h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 28px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.fg { margin-bottom: 14px; }
+.fg:last-of-type { margin-bottom: 0; }
+label.fl {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 7px;
+}
+.fi {
+  width: 100%;
+  padding: 13px 15px;
+  background: #f5f3ef;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  outline: none;
+  transition: border-color .25s, box-shadow .25s, background .25s;
+  -webkit-appearance: none;
+}
+.fi:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245,158,11,.14);
+  background: #fff;
+}
+.fi::placeholder { color: #bbb; }
+textarea.fi { resize: none; }
+
+.form-alert {
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.form-alert.show { display: flex; }
+.form-alert.ok  { background: #ecfdf5; color: #065f46; border: 1px solid #6ee7b7; }
+.form-alert.err { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.form-alert svg { width: 17px; height: 17px; flex-shrink: 0; margin-top: 1px; }
+
+.btn-submit {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--dark);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background .25s, transform .2s, box-shadow .25s;
+}
+.btn-submit:hover {
+  background: var(--amber);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(245,158,11,.3);
+}
+.btn-submit svg { width: 17px; height: 17px; }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-box { padding: 28px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer {
+  background: #060606;
+  border-top: 1px solid rgba(245,158,11,.1);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-logo-box {
+  width: 34px; height: 34px;
+  background: var(--amber);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.footer-logo-box img { width: 22px; height: 22px; object-fit: contain; }
+.footer-logo-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+.footer-logo-name span { color: var(--amber); }
+.footer-desc { font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 300px; }
+.footer-col h4 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 18px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 13px; color: var(--muted); transition: color .2s; }
+.footer-col a:hover { color: var(--amber); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  font-size: 12px;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-bottom-links a { font-size: 12px; color: var(--muted); transition: color .2s; }
+.footer-bottom-links a:hover { color: #fff; }
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
+   LEGAL
+============================================================ */
+.legal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 28px 80px;
+}
+.legal h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(245,158,11,.2);
+  padding-bottom: 20px;
+}
+.legal p { font-size: 14px; color: var(--muted2); line-height: 1.8; margin-bottom: 18px; }
+.legal strong { color: rgba(255,255,255,.7); }
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--amber);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 40px;
+  transition: gap .2s;
+}
+.legal-back:hover { gap: 14px; }
+.legal-back svg { width: 17px; height: 17px; }
+
+/* ============================================================
+   WHATSAPP FLOAT
+============================================================ */
+.wa {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 56px; height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 900;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37,211,102,.4);
+  transition: transform .3s, box-shadow .3s;
+}
+.wa:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 36px rgba(37,211,102,.55);
+}
+.wa svg { width: 28px; height: 28px; }
+.wa-ring {
+  position: absolute;
+  inset: -5px;
+  border: 2px solid rgba(37,211,102,.5);
+  border-radius: 50%;
+  animation: wa-ring 2.5s ease-out infinite;
+}
+@keyframes wa-ring {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ======================== NAVBAR ======================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+
+    <a href="#inicio" class="nav-logo">
+      <div class="nav-logo-box">
+        <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png" alt="Logo Drew At Services">
+      </div>
+      <div class="nav-logo-name">Drew At<span> Services</span></div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+    </ul>
+
+    <a href="#contacto" class="nav-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      Solicitar Presupuesto
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <svg id="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#inicio" class="mob-link">Inicio</a>
+    <a href="#servicios" class="mob-link">Servicios</a>
+    <a href="#nosotros" class="mob-link">Nosotros</a>
+    <a href="#contacto" class="mob-link mob-cta">→ Solicitar Presupuesto</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ======================== VIEW: HOME ======================== -->
+<div id="view-home" class="view active">
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-img">
+      <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_1_dmeqn1.webp?q=80&w=2831&auto=format&fit=crop" alt="Reformas profesionales">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="hero-dot"></span>
+        Especialistas en Reformas Integrales
+      </div>
+
+      <h1 class="hero-title">
+        Transformamos<br>tus espacios<br>con <em>calidad y garantía</em>
+      </h1>
+
+      <p class="hero-sub">
+        Servicios profesionales de reformas, instalaciones, pladur, pintura y mantenimiento.
+        Soluciones a medida para hogares y empresas con resultados que superan expectativas.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-gold">
+          Solicita Presupuesto Gratis
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servicios" class="btn-ghost">Nuestros Servicios</a>
+      </div>
+
+      <div class="hero-proof">
+        <div class="proof-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Presupuesto sin compromiso
+        </div>
+        <div class="proof-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Cumplimiento de plazos
+        </div>
+        <div class="proof-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Garantía de calidad
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">15+</div><div class="hstat-l">Años de<br>Experiencia</div></div>
+      <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Proyectos<br>Completados</div></div>
+      <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Garantía<br>Escrita</div></div>
+    </div>
+
+    <div class="hero-wedge"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servicios" class="section section-dark">
+    <div class="container">
+      <div class="services-head sr">
+        <div>
+          <div class="s-label">Lo que hacemos</div>
+          <h2 class="s-title">Nuestros <em>Servicios</em></h2>
+        </div>
+        <p class="s-desc" style="max-width:380px">
+          Ofrecemos un catálogo completo de soluciones para llevar a cabo cualquier proyecto de reforma, construcción o mantenimiento con un único equipo de confianza.
+        </p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- JS renderiza las tarjetas -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="nosotros" class="section section-darker">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="sr sr-left about-img-wrap">
+          <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_2_acxqag.webp?q=80&w=2670&auto=format&fit=crop" alt="Profesionales trabajando" class="about-img">
+          <div class="about-border"></div>
+          <div class="about-badge">
+            <div class="about-badge-n">15+</div>
+            <div class="about-badge-l">Años de<br>experiencia</div>
+          </div>
+        </div>
+
+        <div class="sr sr-right">
+          <div class="s-label">Por qué elegirnos</div>
+          <h2 class="s-title">¿Por qué elegirnos para su <em>próxima reforma</em>?</h2>
+          <p class="s-desc">
+            Con más de 15 años de experiencia en el sector de la construcción y reformas, hemos construido una sólida reputación basada en la seriedad, la transparencia y los acabados impecables. Nuestro objetivo es que no tenga que preocuparse de nada.
+          </p>
+          <div class="features-list" id="features-list">
+            <!-- JS renderiza los items -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto" class="section section-dark contact-wrap">
+    <div class="contact-bg-img">
+      <img src="https://res.cloudinary.com/dgfrkwkf2/image/upload/v1779230058/drew_imagen_1_dmeqn1.webp?q=80&w=2831&auto=format&fit=crop" alt="">
+    </div>
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="sr contact-info">
+          <div class="s-label">Hablemos</div>
+          <h2 class="s-title">¿Listo para dar vida a <em>tu proyecto</em>?</h2>
+          <p class="s-desc">
+            Cuéntanos qué necesitas. Realizamos una visita técnica, tomamos medidas y te entregamos un presupuesto detallado sin ningún coste ni compromiso por tu parte.
+          </p>
+
+          <div class="contact-cards">
+            <a href="tel:+34682676844" class="cc">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div>
+                <div class="cc-lbl">Llámanos directamente</div>
+                <div class="cc-val">+34 682 676 844</div>
+              </div>
+            </a>
+
+            <div class="cc">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="cc-lbl">Envíanos un correo</div>
+                <div class="cc-val">contacto@drewatservices.com</div>
+              </div>
+            </div>
+
+            <div class="cc">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="cc-lbl">Zona de trabajo</div>
+                <div class="cc-val">Barcelona y alrededores</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="sr sr-right">
+          <div class="form-box">
+            <h3>Solicita tu Presupuesto</h3>
+
+            <div class="form-alert ok" id="form-ok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</span>
+            </div>
+            <div class="form-alert err" id="form-err">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Hubo un error. Por favor inténtalo de nuevo o llámanos.</span>
+            </div>
+
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="fg">
+                  <label class="fl" for="user_name">Nombre</label>
+                  <input class="fi" type="text" id="user_name" name="user_name" placeholder="Tu nombre" required>
+                </div>
+                <div class="fg">
+                  <label class="fl" for="user_phone">Teléfono</label>
+                  <input class="fi" type="tel" id="user_phone" name="user_phone" placeholder="Tu teléfono" required>
+                </div>
+              </div>
+              <div class="fg">
+                <label class="fl" for="user_email">Email</label>
+                <input class="fi" type="email" id="user_email" name="user_email" placeholder="tu@email.com" required>
+              </div>
+              <div class="fg">
+                <label class="fl" for="service_type">Tipo de Servicio</label>
+                <select class="fi" id="service_type" name="service_type">
+                  <option value="Reforma Integral">Reforma Integral</option>
+                  <option value="Reforma de Baño/Cocina">Reforma de Baño/Cocina</option>
+                  <option value="Instalaciones (Luz, Agua, Gas)">Instalaciones (Luz, Agua, Gas)</option>
+                  <option value="Pladur y Pintura">Pladur y Pintura</option>
+                  <option value="Otros trabajos">Otros trabajos</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label class="fl" for="message">Descripción del proyecto</label>
+                <textarea class="fi" id="message" name="message" rows="4" placeholder="Cuéntanos qué tienes en mente..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 21c-1.536 0-3.033-.42-4.34-1.216l-.312-.19-3.238.868.868-3.238-.19-.312A8.905 8.905 0 013.09 12.03c0-4.945 4.025-8.97 8.97-8.97s8.97 4.025 8.97 8.97-4.02 8.97-8.97 8.97zm0-19.988C5.961 1.012 1 5.942 1 12.012c0 1.954.512 3.86 1.488 5.534L1 23l5.632-1.492A10.92 10.92 0 0012.03 23c6.07 0 11-4.93 11-11s-4.93-11-11-11z" fill-rule="evenodd"/></svg>
+                Enviar por WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-home -->
+
+<!-- ======================== VIEW: AVISO LEGAL ======================== -->
+<div id="view-aviso-legal" class="view">
+  <div class="legal">
+    <h1>Aviso Legal</h1>
+    <p><strong>1. Datos identificativos</strong></p>
+    <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: la empresa titular de dominio web es <strong>Drew At Services</strong>.</p>
+    <p><strong>2. Usuarios</strong></p>
+    <p>El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+    <p><strong>3. Uso del portal</strong></p>
+    <p>Nuestra web proporciona el acceso a multitud de informaciones, servicios o datos en Internet pertenecientes a Drew At Services o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal.</p>
+    <p><strong>4. Propiedad intelectual e industrial</strong></p>
+    <p>Drew At Services es titular de todos los derechos de propiedad intelectual e industrial de su página web.</p>
+    <p><strong>5. Modificaciones</strong></p>
+    <p>Drew At Services se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal.</p>
+    <a href="#inicio" class="legal-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al inicio
+    </a>
+  </div>
+</div>
+
+<!-- ======================== VIEW: PRIVACIDAD ======================== -->
+<div id="view-privacidad" class="view">
+  <div class="legal">
+    <h1>Política de Privacidad</h1>
+    <p><strong>1. Protección de datos de carácter personal</strong></p>
+    <p><strong>Drew At Services</strong> se compromete a cumplir la legislación vigente en materia de tratamiento de datos de carácter personal.</p>
+    <p><strong>2. Finalidad del tratamiento</strong></p>
+    <p>Los datos personales que se puedan recoger a través de los formularios serán utilizados exclusivamente para responder a consultas, peticiones o solicitudes de presupuestos.</p>
+    <p><strong>3. Legitimación</strong></p>
+    <p>La base legal para el tratamiento de sus datos es el consentimiento expreso otorgado al enviar el formulario.</p>
+    <p><strong>4. Conservación de los datos</strong></p>
+    <p>Los datos proporcionados se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir con obligaciones legales.</p>
+    <a href="#inicio" class="legal-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al inicio
+    </a>
+  </div>
+</div>
+
+</main>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#inicio" class="footer-logo">
+          <div class="footer-logo-box">
+            <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png" alt="Logo Drew At Services">
+          </div>
+          <div class="footer-logo-name">Drew At<span> Services</span></div>
+        </a>
+        <p class="footer-desc">Tu empresa de confianza para todo tipo de reformas, instalaciones y mantenimientos. Calidad profesional y garantías por escrito.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Reformas Integrales</a></li>
+          <li><a href="#servicios">Electricidad y Fontanería</a></li>
+          <li><a href="#servicios">Baños y Cocinas</a></li>
+          <li><a href="#servicios">Pladur y Pintura</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Drew At Services. Todos los derechos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="#aviso-legal">Aviso Legal</a>
+        <a href="#privacidad">Política de Privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================== WHATSAPP FLOAT ======================== -->
+<a href="https://wa.me/34682676844" target="_blank" rel="noopener noreferrer" class="wa" aria-label="Contactar por WhatsApp">
+  <div class="wa-ring"></div>
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12.031 21c-1.536 0-3.033-.42-4.34-1.216l-.312-.19-3.238.868.868-3.238-.19-.312A8.905 8.905 0 013.09 12.03c0-4.945 4.025-8.97 8.97-8.97s8.97 4.025 8.97 8.97-4.02 8.97-8.97 8.97zm0-19.988C5.961 1.012 1 5.942 1 12.012c0 1.954.512 3.86 1.488 5.534L1 23l5.632-1.492A10.92 10.92 0 0012.03 23c6.07 0 11-4.93 11-11s-4.93-11-11-11z" fill-rule="evenodd"/>
+  </svg>
+</a>
+
+<!-- ======================== JAVASCRIPT ======================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── SVG ICONS (inline, no external dependency) ── */
+  var ICONS = {
+    home:         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    zap:          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    bath:         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 A3 3 0 0 1 6 9 L2 9 L2 20 A2 2 0 0 0 4 22 L20 22 A2 2 0 0 0 22 20 L22 9 L6 9"/><path d="M6 2 L6 9"/></svg>',
+    wall:         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>',
+    paint:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h18v4a6 6 0 01-6 6H8a6 6 0 01-6-6V8z"/><path d="M20 8V5a2 2 0 00-2-2H6"/><line x1="20" y1="13" x2="22" y2="13"/></svg>',
+    droplet:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>',
+    ruler:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7l-1.4 1.4-6-6 1.4-1.4a1 1 0 011.4 0l4.6 4.6a1 1 0 010 1.4z"/><path d="M7.3 22.7l-4.6-4.6a1 1 0 010-1.4L14.3 5.1l6 6L8.7 22.7a1 1 0 01-1.4 0z"/><line x1="11" y1="9" x2="9" y2="11"/><line x1="14" y1="12" x2="12" y2="14"/></svg>',
+    wrench:       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',
+    users:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+    shield:       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+    clock:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    thumbsup:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>'
+  };
+
+  /* ── DATA ── */
+  var services = [
+    { title: 'Reformas Integrales',           desc: 'Renovamos por completo tu vivienda o local. Gestión integral del proyecto.',                              icon: 'home'    },
+    { title: 'Electricidad, Agua y Gas',      desc: 'Instalaciones completas y boletines. Solución de averías y nuevas tomas.',                               icon: 'zap'     },
+    { title: 'Baños y Cocinas',               desc: 'Rehabilitación completa. Alicatados, cambios de bañera por ducha, encimeras.',                           icon: 'bath'    },
+    { title: 'Montaje de Pladur',             desc: 'Falsos techos, tabiquería seca, insonorización, mobiliario de pladur a medida.',                         icon: 'wall'    },
+    { title: 'Pintura Decorativa e Industrial',desc:'Pintura interior/exterior. Alisado, estucos, epoxi y antihumedad.',                                      icon: 'paint'   },
+    { title: 'Desagües y Fontanería',         desc: 'Instalaciones sanitarias, filtraciones, desatascos y renovación comunitaria.',                           icon: 'droplet' },
+    { title: 'Mamparas a Medida',             desc: 'Suministro y colocación de mamparas a medida con cristal de máxima seguridad.',                          icon: 'ruler'   },
+    { title: 'Mantenimiento General',         desc: 'Mantenimiento preventivo y correctivo para comunidades, oficinas y viviendas.',                          icon: 'wrench'  }
+  ];
+
+  var features = [
+    { icon: 'users',    title: 'Equipo Profesional',      desc: 'Operarios especializados en cada gremio: fontaneros, electricistas con carnet y albañiles.' },
+    { icon: 'shield',   title: 'Materiales de Calidad',   desc: 'Trabajamos únicamente con primeras marcas y certificaciones para asegurar durabilidad.'     },
+    { icon: 'clock',    title: 'Cumplimiento de Plazos',  desc: 'Planificación rigurosa que nos permite asegurar por contrato la fecha de finalización.'     },
+    { icon: 'thumbsup', title: 'Garantía Total',          desc: 'Ofrecemos garantía por escrito en nuestros trabajos para su total tranquilidad.'            }
+  ];
+
+  /* ── RENDER SERVICES ── */
+  var grid = document.getElementById('services-grid');
+  grid.innerHTML = services.map(function (s, i) {
+    return '<div class="svc-card sr" style="transition-delay:' + (i * 55) + 'ms">' +
+      '<div class="svc-num">' + String(i + 1).padStart(2, '0') + '</div>' +
+      '<div class="svc-icon">' + (ICONS[s.icon] || '') + '</div>' +
+      '<div class="svc-name">' + s.title + '</div>' +
+      '<div class="svc-desc">' + s.desc + '</div>' +
+      '</div>';
+  }).join('');
+
+  /* ── RENDER FEATURES ── */
+  var flist = document.getElementById('features-list');
+  flist.innerHTML = features.map(function (f, i) {
+    return '<div class="feat-item sr" style="transition-delay:' + (i * 80) + 'ms">' +
+      '<div class="feat-icon">' + (ICONS[f.icon] || '') + '</div>' +
+      '<div><div class="feat-title">' + f.title + '</div><div class="feat-desc">' + f.desc + '</div></div>' +
+      '</div>';
+  }).join('');
+
+  /* ── SCROLL REVEAL ── */
+  var io = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+
+  function observeAll() {
+    document.querySelectorAll('.sr').forEach(function (el) { io.observe(el); });
+  }
+  setTimeout(observeAll, 80);
+
+  /* ── VIEW ROUTER ── */
+  function router(e) {
+    var hash = window.location.hash;
+    var isLoad = e && e.type === 'load';
+    document.querySelectorAll('.view').forEach(function (v) { v.classList.remove('active'); });
+
+    if (hash === '#aviso-legal') {
+      document.getElementById('view-aviso-legal').classList.add('active');
+      window.scrollTo(0, 0);
+    } else if (hash === '#privacidad') {
+      document.getElementById('view-privacidad').classList.add('active');
+      window.scrollTo(0, 0);
+    } else {
+      document.getElementById('view-home').classList.add('active');
+      if (isLoad) {
+        if (['#contacto','#servicios','#nosotros','#inicio'].indexOf(hash) !== -1) {
+          history.replaceState(null, null, window.location.pathname);
+        }
+        setTimeout(function () { window.scrollTo(0, 0); }, 10);
+      } else {
+        if (hash && hash !== '#' && hash !== '#inicio') {
+          setTimeout(function () {
+            var el = document.getElementById(hash.substring(1));
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 50);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+      setTimeout(observeAll, 100);
+    }
+  }
+
+  window.addEventListener('hashchange', router);
+  window.addEventListener('load', router);
+
+  /* ── NAVBAR SCROLL ── */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ── MOBILE MENU ── */
+  var hamburger  = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var icoMenu    = document.getElementById('ico-menu');
+  var icoClose   = document.getElementById('ico-close');
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    icoMenu.style.display  = '';
+    icoClose.style.display = 'none';
+  }
+
+  hamburger.addEventListener('click', function () {
+    var open = mobileMenu.classList.toggle('open');
+    icoMenu.style.display  = open ? 'none' : '';
+    icoClose.style.display = open ? ''     : 'none';
+  });
+
+  document.querySelectorAll('.mob-link').forEach(function (l) {
+    l.addEventListener('click', closeMobile);
+  });
+
+  /* ── FORM → WHATSAPP ── */
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fd      = new FormData(form);
+    var name    = fd.get('user_name')    || '';
+    var phone   = fd.get('user_phone')   || '';
+    var email   = fd.get('user_email')   || '';
+    var service = fd.get('service_type') || '';
+    var message = fd.get('message')      || '';
+
+    var text = '¡Hola! Me gustaría solicitar un presupuesto.\n' +
+      '*Nombre:* '          + name    + '\n' +
+      '*Teléfono:* '        + phone   + '\n' +
+      '*Email:* '           + email   + '\n' +
+      '*Tipo de Servicio:* '+ service + '\n' +
+      '*Mensaje:* '         + message;
+
+    var url = 'https://wa.me/34682676844?text=' + encodeURIComponent(text);
+    window.open(url, '_blank');
+    form.reset();
+  });
+
+}());
+</script>
+
+</body>
+</html>
