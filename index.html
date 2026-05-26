@@ -25,10 +25,10 @@
   <meta property="twitter:url" content="https://drewNtservices.com/">
   <meta property="twitter:title" content="Drew Nt Services - Reformas y Mantenimiento">
   <meta property="twitter:description" content="Expertos en construcción y reformas con más de 15 años de experiencia. Seriedad, transparencia y acabados impecables.">
-  <meta property="twitter:image" content="https://drew-Nt-services.vercel.app/twitter-image.jpg">
+  <meta property="twitter:image" content="https://drew-nt-services.vercel.app/twitter-image.jpg">
   
-  <!-- Schema.org Dnta (JSON-LD) -->
-  <script type="applicntion/ld+json">
+  <!-- Schema.org Data (JSON-LD) -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
@@ -61,15 +61,15 @@
   <link rel="icon" sizes="192x192" href="/android_192x192.png">
   <link rel="icon" sizes="512x512" href="/android_512x512.png">
   
-  <!-- Carga de Tailwind CSS a traves de su CDN oficial sin necesidad de herramientas de compilacion -->
+  <!-- Carga de Tailwind CSS a través de su CDN oficial sin necesidad de herramientas de compilación -->
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   
   <!-- Carga de Lucide Icons (Iconos) -->
-  <script src="https://unpkg.com/lucide@lntest"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   
   <!-- Google Fonts - Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstntic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style type="text/tailwindcss">
@@ -186,7 +186,7 @@
         <div class="flex items-center">
           <a href="#inicio" class="text-xl md:text-2xl font-bold font-sans tracking-tight text-slate-900 group flex items-center gap-2 hover:opacity-90 transition-opacity">
             <span class="bg-amber-500 text-white p-1.5 md:p-2 rounded-lg inline-flex items-center justify-center">
-              <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-nt-Services-/refs/heads/main/logo_web_200x200.png" 
+              <img src="https://raw.githubusercontent.com/onixmanagerpro/Drew-At-Services-/refs/heads/main/logo_web_200x200.png" 
                    alt="Logo Drew Nt Services" 
                    class="w-6 h-6 md:w-7 md:h-7 object-contain">
             </span>
@@ -339,11 +339,12 @@
           </div>
 
           <div class="relative reviews-wrapper" id="reviewsWrapper">
-            <button id="scrollLeftBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-xl hover:bg-white text-slate-700 hover:text-amber-500 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-0 disabled:pointer-events-none -ml-2 md:-ml-5">
+            <!-- Botones de flecha: visibles solo en pantallas medianas (md) hacia arriba -->
+            <button id="scrollLeftBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-xl hover:bg-white text-slate-700 hover:text-amber-500 w-10 h-10 md:w-12 md:h-12 rounded-full hidden md:flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-0 disabled:pointer-events-none -ml-2 md:-ml-5">
               <i data-lucide="chevron-left" class="w-5 h-5 md:w-6 md:h-6"></i>
             </button>
 
-            <button id="scrollRightBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-xl hover:bg-white text-slate-700 hover:text-amber-500 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-0 disabled:pointer-events-none -mr-2 md:-mr-5">
+            <button id="scrollRightBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-xl hover:bg-white text-slate-700 hover:text-amber-500 w-10 h-10 md:w-12 md:h-12 rounded-full hidden md:flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-0 disabled:pointer-events-none -mr-2 md:-mr-5">
               <i data-lucide="chevron-right" class="w-5 h-5 md:w-6 md:h-6"></i>
             </button>
 
@@ -588,14 +589,14 @@
       { icon: "thumbs-up", title: "Garantía Total", description: "Ofrecemos garantía por escrito en nuestros trabajos para su total tranquilidad." }
     ];
 
-    // Datos de reseñas AHORA CON FOTOS REALES (URLs de ejemplo, cámbialas por las tuyas)
+    // Datos de reseñas con fotos reales (URLs de ejemplo, cámbialas por las tuyas)
     const reviewsData = [
       {
         initials: "P",
         name: "Patenita",
         project: "Reforma integral de piso",
         stars: 5,
-        photo: "https://i.pravatar.cc/150?img=1",   // ← IMAGEN REAL
+        photo: "https://i.pravatar.cc/150?img=1",
         text: "La verdad es que me a hecho varias cosas en mi piso todo de primera muy bien meticuloso muy profesional en todo los trabajos.",
         color: "bg-rose-100 text-rose-600"
       },
@@ -788,7 +789,7 @@
     }, 100);
 
     // ----------------------------------------------------------------------
-    // 6. Carrusel de Reseñas
+    // 6. Carrusel de Reseñas (flechas solo visibles en escritorio)
     // ----------------------------------------------------------------------
     const scrollContainer = document.getElementById('reviewsScrollContainer');
     const scrollLeftBtn = document.getElementById('scrollLeftBtn');
